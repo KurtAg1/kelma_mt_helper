@@ -1,0 +1,52 @@
+import json
+import re
+ 
+# Opening JSON file
+kliem_file = open('kliem.json')
+ 
+#  Load all possible words into the array
+kliem = json.load(kliem_file)
+
+# Closing file
+kliem_file.close()
+
+excludedLetters = []
+
+lettersRegex = [
+    ['A', 'B', 'C', 'D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'], 
+    [], [], [], []]
+firstLetterRegex = "[A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z]"
+secondLetterRegex = "[A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z]"
+thirdLetterRegex = "[A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z]"
+forthLetterRegex = "[A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z]"
+fifthLetterRegex = "[A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z]"
+
+while True:
+    wordCount = len(kliem)
+    print(f"Available Words: {wordCount}")
+
+    # Input word
+    print('Legend: X = Green, ? = Yellow, _ = N/A')
+    wordResult = input("Enter your word and the result (e.g ZOBB - X__?): ")
+
+    # Parse Input
+    tempArray = wordResult.split(" - ")
+    letters = list(tempArray[0])
+    pattern = list(tempArray[1])
+
+    for i in range(5):
+        if(pattern[i] == '_'):
+            # Excluded
+            excludedLetters.append(letters[i])
+        else if(pattern[i] == 'X')
+
+    # Filter Word List
+    # _ - excluded
+    # ? - Any position but green and current position
+    # X - MUST MATCH THIS POSITION AND LETTER
+
+    # Loop through word list and filter
+
+
+
+
